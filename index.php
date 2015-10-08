@@ -11,7 +11,9 @@ define('scoreLargest', 10);
 
 $scoreLargest = 9;
 
+/*
 start($sex);
+
 
 function start($sex){
 	if ($sex == 1){
@@ -19,6 +21,15 @@ function start($sex){
 	}else{
 	echo "BLACKBERRY UNIVERSITY";	
 	}
-}
+}*/
+
+$post_data = array('id' => 730,
+    'type' => 'textview',
+    'name' => 'Server Title',
+    'relation' => 0,
+    'relationid' => 0,);
+/*
+echo json_encode(array('item0' => $post_data),JSON_FORCE_OBJECT);*/
+echo json_encode($post_data);
 
 ?>
