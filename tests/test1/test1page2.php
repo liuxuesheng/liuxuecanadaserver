@@ -7,6 +7,7 @@ $item0 = array('id' => 200,
     'relation' => 0,
     'relationid' => 0,
     'size' => 24,
+    'alignment' => '14',
     'inlayout' => 'top');
 
 $item1 = array('id' => 201,
@@ -15,12 +16,14 @@ $item1 = array('id' => 201,
     'relation' => 1,
     'relationid' => 200,
     'size' => 18,
+    'alignment' => '14',
     'inlayout' => 'top');
 
 $item2 = array('id' => 202,
     'type' => 'progressbar',
     'relation' => 1,
     'relationid' => 200,
+    'alignment' => '14',
     'inlayout' => 'top');
 
 $item3 = array('id' => 203,
@@ -28,7 +31,11 @@ $item3 = array('id' => 203,
     'name' => '下一步',
     'relation' => 0,
     'relationid' => 0,
-    'size' => 18,
+    'size' => 20,
+    'nextPage' => 3,
+    'savedataid' => 0,
+    'savedatatype' => 'none',
+    'alignment' => '14',
     'inlayout' => 'bottom');
 
 $item4 = array('id' => 204,
@@ -37,6 +44,7 @@ $item4 = array('id' => 204,
     'relation' => 0,
     'relationid' => 0,
     'size' => 18,
+    'alignment' => '14',
     'inlayout' => 'middle');
 
 $item5 = array('id' => 205,
@@ -45,6 +53,7 @@ $item5 = array('id' => 205,
     'relation' => 3,
     'relationid' => 204,
     'seekresultid' => 204,
+    'alignment' => '14',
     'inlayout' => 'middle');
 
 $item6 = array('id' => 206,
@@ -53,6 +62,7 @@ $item6 = array('id' => 206,
     'relation' => 3,
     'relationid' => 205,
     'size' => 18,
+    'alignment' => '14',
     'inlayout' => 'middle');
 
 $item7 = array('id' => 207,
@@ -61,6 +71,7 @@ $item7 = array('id' => 207,
     'relation' => 3,
     'relationid' => 206,
     'seekresultid' => 206,
+    'alignment' => '14',
     'inlayout' => 'middle');
 
 $item8 = array('id' => 208,
@@ -69,6 +80,7 @@ $item8 = array('id' => 208,
     'relation' => 3,
     'relationid' => 207,
     'size' => 18,
+    'alignment' => '14',
     'inlayout' => 'middle');
 
 $item9 = array('id' => 209,
@@ -77,6 +89,7 @@ $item9 = array('id' => 209,
     'relation' => 3,
     'relationid' => 208,
     'seekresultid' => 208,
+    'alignment' => '14',
     'inlayout' => 'middle');
 
 
