@@ -12,16 +12,31 @@ if ($conn->connect_error) {
 } 
 //echo "Database connected!!!"."<br>";
 
-$sql = "SELECT name FROM university WHERE point = 100";
+$sql = "SELECT english_name FROM university";
 $result = $conn->query($sql);
+$nametring = "";
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo $row["name"];
+        $nametring .= $row["english_name"] . ",";
     }
+    $nametring = substr($nametring, 0, -1);
+    echo $nametring;
 } else {
     echo "0 results";
 }
+
+
+
+/*
+$titlestring = "";
+while($row = mysqli_fetch_array($result))
+{
+  $titles .= $row['title'] . ", ";
+}
+$titlestring = substr($titlestring, 0, -2);*/
+
+
 $conn->close();
 ?>
