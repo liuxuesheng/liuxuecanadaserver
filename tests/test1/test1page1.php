@@ -7,17 +7,19 @@ $item0 = array('id' => 100,
     'name' => '毕业院校',
     'relation' => '0',
     'relationid' => '0',
-    'size' => 28,
-    'alignment' => '14',
+    'size' => 24,
+    'textcolor' => '#FFFFFF',
+    'alignment' => '14,15',
     'inlayout' => 'top');
 
 $item1 = array('id' => 101,
     'type' => 'textview',
-    'name' => '进度',
+    'name' => '1/5',
     'relation' => '1',
     'relationid' => '100',
-    'size' => 18,
-    'alignment' => '14',
+    'size' => 16,
+    'textcolor' => '#FFFFFF',
+    'alignment' => '14,15',
     'inlayout' => 'top');
 
 $item2 = array('id' => 102,
@@ -25,11 +27,11 @@ $item2 = array('id' => 102,
     'name' => '下一步',
     'relation' => '0',
     'relationid' => '0',
-    'size' => 20,
+    'size' => 16,
     'nextPage' => 2,
     'savedataid' => 103,
     'savedatatype' => 'listview',
-    'alignment' => '14',
+    'alignment' => '14,15',
     'inlayout' => 'bottom');
 
 $user = 'root';
@@ -41,9 +43,9 @@ $conn = new mysqli('localhost',$user, $password, $db);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+} 
 
-$sql = "SELECT chinese_name FROM university";
+$sql = "SELECT chinese_name FROM chinese_university";
 mysqli_query($conn, "SET CHARACTER SET 'utf8';");
 /*
 mysqli_set_charset($Handle, 'utf8'); // <- add this too
