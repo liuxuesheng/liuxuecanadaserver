@@ -23,11 +23,12 @@ $item1 = array('id' => 101,
     'inlayout' => 'top');
 
 $item2 = array('id' => 102,
-    'type' => 'textview',
+    'type' => 'button',
     'name' => '下一步',
     'relation' => '0',
     'relationid' => '0',
     'size' => 16,
+    'backgroundcolor' => '224,224,224',
     'nextPage' => 2,
     'savedataid' => 103,
     'savedatatype' => 'listview',
@@ -56,8 +57,6 @@ mysqli_query($Handle, "SET COLLATION_CONNECTION = 'utf8_unicode_ci';");
 $result = $conn->query($sql);
 $nametring = "";
 
-
-
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -67,56 +66,16 @@ if ($result->num_rows > 0) {
 
 $nametring = substr($nametring, 0, -1);
 
-//echo $nametring;
-
 $item3 = array('id' => 103,
     'type' => 'listview',
     'name' => 'universities',
     'values' => $nametring,
-    //'values' => '北京大学,清华大学,复旦大学,武汉大学,中国人民大学,浙江大学,上海交通大学,南京大学,中国科学技术大学,国防科学技术大学',
     'relation' => '0',
     'relationid' => '0',
     'alignment' => '14',
     'inlayout' => 'middle');
 
-/*
-$item4 = array('id' => 104,
-    'type' => 'textview',
-    'name' => '毕业院校',
-    'relation' => 0,
-    'relationid' => 0,
-    'size' => 24,
-    'alignment' => '14',
-    'inlayout' => 'middle');
-
-$item5 = array('id' => 105,
-    'type' => 'wheelselectorview',
-    'name' => 'universities',
-    'values' => '北京大学,清华大学,复旦大学,武汉大学,中国人民大学,浙江大学,上海交通大学,南京大学,中国科学技术大学,国防科学技术大学',
-    'relation' => 3,
-    'relationid' => 104,
-    'alignment' => '14',
-    'inlayout' => 'middle');
-
-$item6 = array('id' => 106,
-    'type' => 'textview',
-    'name' => '主修专业',
-    'relation' => 3,
-    'relationid' => 105,
-    'size' => 24,
-    'alignment' => '14',
-    'inlayout' => 'middle');
-
-$item7 = array('id' => 107,
-    'type' => 'wheelselectorview',
-    'name' => 'majorcategory',
-    'values' => '哲学,经济学,法学,教育学,文学,历史学,理学,工学,农学,医学,军事学,管理学',
-    'relation' => 3,
-    'relationid' => 106,
-    'alignment' => '14',
-    'inlayout' => 'middle');*/
-
-$list = array($item0, $item1, $item2, $item3/*, $item4, $item5, $item6, $item7*/);
+$list = array($item0, $item1, $item2, $item3);
 	echo json_encode($list);
 }
 
