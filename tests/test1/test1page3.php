@@ -21,12 +21,13 @@ $item1 = array('id' => 301,
     'alignment' => '14,15',
     'inlayout' => 'top');
 
-$item3 = array('id' => 303,
-    'type' => 'textview',
+$item2 = array('id' => 302,
+    'type' => 'button',
     'name' => '下一步',
-    'relation' => 0,
-    'relationid' => 0,
+    'relation' => '0',
+    'relationid' => '0',
     'size' => 16,
+    'backgroundcolor' => '224,224,224',
     'nextPage' => 4,
     'savedataid' => 0,
     'savedatatype' => 'none',
@@ -55,7 +56,7 @@ $item5 = array('id' => 305,
     'inlayout' => 'middle');
 
 
-$list = array($item0, $item1, $item3, $item4, $item5);
+$list = array($item0, $item1, $item2, $item4, $item5);
 	echo json_encode($list);
 }
 
