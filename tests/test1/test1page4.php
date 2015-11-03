@@ -13,7 +13,7 @@ $item0 = array('id' => 400,
 
 $item1 = array('id' => 401,
     'type' => 'textview',
-    'name' => '4/5',
+    'name' => '4/6',
     'relation' => 1,
     'relationid' => 400,
     'size' => 16,

@@ -13,7 +13,7 @@ $item0 = array('id' => 300,
 
 $item1 = array('id' => 301,
     'type' => 'textview',
-    'name' => '3/5',
+    'name' => '3/6',
     'relation' => 1,
     'relationid' => 300,
     'size' => 16,
@@ -34,21 +34,13 @@ $item2 = array('id' => 302,
     'alignment' => '14,15',
     'inlayout' => 'bottom');
 
-$item4 = array('id' => 304,
-    'type' => 'textview',
-    'name' => 'GPA',
+$item5 = array('id' => 305,
+    'textid' => 306,
+    'seekbarid' => 307,
+    'type' => 'seekbar',
+    'textname' => 'GPA',
     'relation' => 0,
     'relationid' => 0,
-    'size' => 18,
-    'alignment' => '14',
-    'inlayout' => 'middle');
-
-$item5 = array('id' => 305,
-    'type' => 'seekbar',
-    'name' => 'GPA',
-    'relation' => 3,
-    'relationid' => 304,
-    'seekresultid' => 304,
     'maxvalue' => 4,
     'minvalue' => 0,
     'factor' => 0.1,
@@ -56,7 +48,7 @@ $item5 = array('id' => 305,
     'inlayout' => 'middle');
 
 
-$list = array($item0, $item1, $item2, $item4, $item5);
+$list = array($item0, $item1, $item2, $item5);
 	echo json_encode($list);
 }
 
