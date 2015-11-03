@@ -1,7 +1,7 @@
 <?php
 
 function returnPage6(){
-$item0 = array('id' => 300,
+$item0 = array('id' => 600,
     'type' => 'textview',
     'name' => '专业细分类别',
     'relation' => 0,
@@ -11,17 +11,17 @@ $item0 = array('id' => 300,
     'alignment' => '14,15',
     'inlayout' => 'top');
 
-$item1 = array('id' => 301,
+$item1 = array('id' => 601,
     'type' => 'textview',
     'name' => '6/6',
     'relation' => '1',
-    'relationid' => '300',
+    'relationid' => '600',
     'size' => 16,
     'textcolor' => '#FFFFFF',
     'alignment' => '14,15',
     'inlayout' => 'top');
 
-$item2 = array('id' => 302,
+$item2 = array('id' => 602,
     'type' => 'button',
     'name' => '下一步',
     'relation' => '0',
@@ -32,7 +32,7 @@ $item2 = array('id' => 302,
     'alignment' => '14,15',
     'inlayout' => 'bottom');
 
-$item3 = array('id' => 103,
+$item3 = array('id' => 603,
     'type' => 'listview',
     'name' => 'detailedmajorcat',
     'values' => '010107 宗教学,010106 美学,010105 伦理学,010104 逻辑学,010103 外国哲学,010102 中国哲学,010101 马克思主义哲学,02 经济学,0202 应用经济学',
