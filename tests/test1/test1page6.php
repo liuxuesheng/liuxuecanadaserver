@@ -22,13 +22,14 @@ $item1 = array('id' => 601,
     'inlayout' => 'top');
 
 $item2 = array('id' => 602,
+    'blockbyid' => '603',
     'type' => 'button',
     'name' => '下一步',
     'relation' => '0',
     'relationid' => '0',
     'size' => 16,
     'backgroundcolor' => '224,224,224',
-    'nextPage' => 6,
+    'nextPage' => 99,
     'alignment' => '14,15',
     'inlayout' => 'bottom');
 

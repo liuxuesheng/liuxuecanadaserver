@@ -23,6 +23,7 @@ $item1 = array('id' => 101,
     'inlayout' => 'top');
 
 $item2 = array('id' => 102,
+    'blockbyid' => '103',
     'type' => 'button',
     'name' => '下一步',
     'relation' => '0',

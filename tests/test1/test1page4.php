@@ -22,6 +22,7 @@ $item1 = array('id' => 401,
     'inlayout' => 'top');
 
 $item2 = array('id' => 402,
+    'blockbyid' => '407A,409A',
     'type' => 'button',
     'name' => '下一步',
     'relation' => '0',
@@ -34,7 +35,7 @@ $item2 = array('id' => 402,
     'alignment' => '14,15',
     'inlayout' => 'bottom');
 
-$item6 = array('textid1' => 406,
+$item3 = array('textid1' => 403,
     'textid2' => 408,
     'seekbarid1' => 407,
     'seekbarid2' => 409,
@@ -53,7 +54,7 @@ $item6 = array('textid1' => 406,
     'alignment' => '14',
     'inlayout' => 'middle');
 
-$list = array($item0, $item1, $item2, $item6);
+$list = array($item0, $item1, $item2, $item3);
 	echo json_encode($list);
 }
 
