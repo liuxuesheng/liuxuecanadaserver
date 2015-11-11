@@ -13,7 +13,7 @@ $item0 = array('id' => 200,
 
 $item1 = array('id' => 201,
     'type' => 'textview',
-    'name' => '2/5',
+    'name' => '2/6',
     'relation' => 1,
     'relationid' => 200,
     'size' => 16,
@@ -22,6 +22,7 @@ $item1 = array('id' => 201,
     'inlayout' => 'top');
 
 $item2 = array('id' => 202,
+    'blockbyid' => '203',
     'type' => 'button',
     'name' => '下一步',
     'relation' => '0',

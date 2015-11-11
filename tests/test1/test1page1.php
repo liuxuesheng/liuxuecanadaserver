@@ -14,7 +14,7 @@ $item0 = array('id' => 100,
 
 $item1 = array('id' => 101,
     'type' => 'textview',
-    'name' => '1/5',
+    'name' => '1/6',
     'relation' => '1',
     'relationid' => '100',
     'size' => 16,
@@ -23,6 +23,7 @@ $item1 = array('id' => 101,
     'inlayout' => 'top');
 
 $item2 = array('id' => 102,
+    'blockbyid' => '103',
     'type' => 'button',
     'name' => '下一步',
     'relation' => '0',
@@ -30,8 +31,6 @@ $item2 = array('id' => 102,
     'size' => 16,
     'backgroundcolor' => '224,224,224',
     'nextPage' => 2,
-    'savedataid' => 103,
-    'savedatatype' => 'listview',
     'alignment' => '14,15',
     'inlayout' => 'bottom');
 
@@ -68,7 +67,7 @@ $nametring = substr($nametring, 0, -1);
 
 $item3 = array('id' => 103,
     'type' => 'listview',
-    'name' => 'universities',
+    'name' => 'useruniversity',
     'values' => $nametring,
     'relation' => '0',
     'relationid' => '0',

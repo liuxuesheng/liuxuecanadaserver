@@ -4,6 +4,8 @@ include 'test1page2.php';
 include 'test1page3.php';
 include 'test1page4.php';
 include 'test1page5.php';
+include 'test1page6.php';
+include 'test1page99.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 
@@ -20,6 +22,10 @@ function findPage($page){
 		echo returnPage4();
 	}else if ($page == 5) {
 		echo returnPage5();
+	}else if ($page == 6) {
+		echo returnPage6();
+	}else if ($page == 99) {
+		echo returnPage99();
 	}else{
 		echo "BLACKBERRY UNIVERSITY";	
 	}
