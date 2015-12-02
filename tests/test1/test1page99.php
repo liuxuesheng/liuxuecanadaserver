@@ -10,7 +10,7 @@ $item0 = array('id' => 9900,
     'size' => 24,
     'textcolor' => '#FFFFFF',
     'alignment' => '14,15',
-    'inlayout' => 'top');
+    'inlayout' => 'scroll');
 
 $item1 = array('id' => 9901,
     'type' => 'piechart',
@@ -18,7 +18,7 @@ $item1 = array('id' => 9901,
     'relation' => '0',
     'relationid' => '0',
     'alignment' => '14',
-    'inlayout' => 'middle');
+    'inlayout' => 'scroll');
 
 $item2 = array('id' => 9902,
     'type' => 'radarchart',
@@ -26,7 +26,7 @@ $item2 = array('id' => 9902,
     'relation' => '3',
     'relationid' => '9901',
     'alignment' => '14',
-    'inlayout' => 'middle');
+    'inlayout' => 'scroll');
 
 $list = array($item0,$item1,$item2);
 	echo json_encode($list);
