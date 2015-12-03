@@ -1,7 +1,8 @@
 <?php
 header("Content-Type:text/html;charset=utf-8");
+$imageID = isset($_GET['image']) ? $_GET['image'] : '';
 
-function returnNewsImageList(){
+function returnNewsImageList($imageMyID){
 
 $user = 'root';
 $password = '1ppVlcA9';
@@ -15,7 +16,7 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "SELECT id,news_imageURL FROM news ORDER BY id DESC LIMIT 1";
+$sql = "SELECT id,news_imageURL FROM news ORDER BY id DESC LIMIT ".$imageMyID.", 1";
 mysqli_query($conn, "SET CHARACTER SET 'utf8';");
 
 $result = $conn->query($sql);
@@ -32,5 +33,5 @@ if ($result->num_rows > 0) {
 
 	echo json_encode($list);
 }
-echo(returnNewsImageList())
+echo(returnNewsImageList($imageID))
 ?>
