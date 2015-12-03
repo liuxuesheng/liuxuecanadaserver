@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "SELECT id,news_title FROM news ORDER BY id DESC LIMIT 5";
+$sql = "SELECT id,news_title FROM news ORDER BY id DESC LIMIT 6";
 mysqli_query($conn, "SET CHARACTER SET 'utf8';");
 
 $result = $conn->query($sql);
