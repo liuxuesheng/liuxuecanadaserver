@@ -1,8 +1,8 @@
 <?php
 header("Content-Type:text/html;charset=utf-8");
-$imageID = isset($_GET['image']) ? $_GET['image'] : '';
+$whichImage = isset($_GET['image']) ? $_GET['image'] : '';
 
-function returnNewsImageList($imageMyID){
+function returnNewsImageList($imageOrder){
 
 $user = 'root';
 $password = '1ppVlcA9';
@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "SELECT id,news_imageURL FROM news ORDER BY id DESC LIMIT ".$imageMyID.", 1";
+$sql = "SELECT id,news_imageURL,news_title FROM news ORDER BY id DESC LIMIT ".$imageOrder.", 1";
 mysqli_query($conn, "SET CHARACTER SET 'utf8';");
 
 $result = $conn->query($sql);
@@ -26,12 +26,12 @@ $list = array();
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $record = array('id' => $row["id"], 'news_imageURL' => $row["news_imageURL"]);
+        $record = array('id' => $row["id"], 'news_imageURL' => $row["news_imageURL"], 'news_title' => $row["news_title"]);
         array_push($list, $record);
     }
 }
 
 	echo json_encode($list);
 }
-echo(returnNewsImageList($imageID))
+echo(returnNewsImageList($whichImage))
 ?>
