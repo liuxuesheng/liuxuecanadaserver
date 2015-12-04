@@ -26,7 +26,7 @@ $list = array();
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $record = array('id' => $row["id"], 'news_imageURL' => $row["news_imageURL"], 'news_title' => $row["news_title"]);
+        $record = array('section' => 'news', 'id' => $row["id"], 'news_imageURL' => $row["news_imageURL"], 'news_title' => $row["news_title"]);
         array_push($list, $record);
     }
 }
