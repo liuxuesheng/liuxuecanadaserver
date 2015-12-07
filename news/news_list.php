@@ -42,7 +42,7 @@ $result2 = $conn->query($sql2);
 if ($result1->num_rows > 0) {
     // output data of each row
     while($row1 = $result1->fetch_assoc()) {
-        $record1 = array('item_section' => 'news', 'id' => $row1["id"], 'news_title' => $row1["news_title"], 'news_imageURL' => $row1["news_imageURL"]);
+        $record1 = array('item_section' => 'news_university', 'id' => $row1["id"], 'news_title' => $row1["news_title"], 'news_imageURL' => $row1["news_imageURL"]);
         array_push($list, $record1);
     }
 }
@@ -50,7 +50,7 @@ if ($result1->num_rows > 0) {
 if ($result2->num_rows > 0) {
     // output data of each row
     while($row = $result2->fetch_assoc()) {
-        $record = array('item_section' => 'news', 'id' => $row["id"], 'news_title' => $row["news_title"]);
+        $record = array('item_section' => 'news_university', 'id' => $row["id"], 'news_title' => $row["news_title"]);
         array_push($list, $record);
     }
 }
