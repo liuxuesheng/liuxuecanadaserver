@@ -16,12 +16,25 @@ if ($conn->connect_error) {
 
 $list = array();
 
+//主板
+$sql88 = "SELECT id,news_title,news_imageURL FROM news ORDER BY id DESC LIMIT 1, 5";
+mysqli_query($conn, "SET CHARACTER SET 'utf8';");
+
+$result88 = $conn->query($sql88);
+
+if ($result88->num_rows > 0) {
+    // output data of each row
+    while($row88 = $result88->fetch_assoc()) {
+        $record88 = array('item_section' => 'news', 'id' => $row88["id"], 'news_title' => $row88["news_title"], 'news_imageURL' => $row88["news_imageURL"]);
+        array_push($list, $record88);
+    }
+}
+
 //学校介绍
 array_push($list, array('section' => '学校介绍'));
 
 $sql1 = "SELECT id,news_title,news_imageURL FROM news_university ORDER BY id DESC LIMIT 1";
 $sql2 = "SELECT id,news_title FROM news_university ORDER BY id DESC LIMIT 1, 4";
-mysqli_query($conn, "SET CHARACTER SET 'utf8';");
 
 $result1 = $conn->query($sql1);
 $result2 = $conn->query($sql2);
@@ -29,7 +42,7 @@ $result2 = $conn->query($sql2);
 if ($result1->num_rows > 0) {
     // output data of each row
     while($row1 = $result1->fetch_assoc()) {
-        $record1 = array('item_section' => 'news_university', 'id' => $row1["id"], 'news_title' => $row1["news_title"], 'news_imageURL' => $row1["news_imageURL"]);
+        $record1 = array('item_section' => 'news', 'id' => $row1["id"], 'news_title' => $row1["news_title"], 'news_imageURL' => $row1["news_imageURL"]);
         array_push($list, $record1);
     }
 }
@@ -37,7 +50,7 @@ if ($result1->num_rows > 0) {
 if ($result2->num_rows > 0) {
     // output data of each row
     while($row = $result2->fetch_assoc()) {
-        $record = array('item_section' => 'news_university', 'id' => $row["id"], 'news_title' => $row["news_title"]);
+        $record = array('item_section' => 'news', 'id' => $row["id"], 'news_title' => $row["news_title"]);
         array_push($list, $record);
     }
 }
@@ -51,7 +64,7 @@ $sql4 = "SELECT id,news_title FROM news_program ORDER BY id DESC LIMIT 1, 4";
 $result3 = $conn->query($sql3);
 $result4 = $conn->query($sql4);
 
-if ($result2->num_rows > 0) {
+if ($result3->num_rows > 0) {
     // output data of each row
     while($row3 = $result3->fetch_assoc()) {
         $record3 = array('item_section' => 'news_program', 'id' => $row3["id"], 'news_title' => $row3["news_title"], 'news_imageURL' => $row3["news_imageURL"]);
