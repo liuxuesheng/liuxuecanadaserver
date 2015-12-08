@@ -1,35 +1,40 @@
 <?php
+header("Content-Type:text/html;charset=utf-8");
+//$recordPage = isset($_GET['page']) ? $_GET['page'] : '';
+//$section = isset($_GET['section']) ? $_GET['section'] : '';
 
+function returnTestPage(){
 
-$message = isset($_GET['message']) ? $_GET['message'] : '';
+$user = 'root';
+$password = '1ppVlcA9';
+$db = 'liuxuecanada';
 
-$sex = isset($_GET['sex']) ? $_GET['sex'] : '';
-$gpa = isset($_GET['gpa']) ? $_GET['gpa'] : '';
-$ielts = isset($_GET['ielts']) ? $_GET['ielts'] : '';
+// Create connection
+$conn = new mysqli('localhost',$user, $password, $db);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
 
-define('scoreLargest', 10);
+//title
+$sql = "SELECT name, imageURL FROM test_all WHERE id = 1";
+mysqli_query($conn, "SET CHARACTER SET 'utf8';");
 
-$scoreLargest = 9;
+$result = $conn->query($sql);
+$name = "";
+$imageURL = "";
 
-/*
-start($sex);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $name .= $row["name"];
+        $imageURL .= $row["imageURL"];
+    }
+}
 
-
-function start($sex){
-	if ($sex == 1){
-	echo "YORK UNIVERSITY";
-	}else{
-	echo "BLACKBERRY UNIVERSITY";	
-	}
-}*/
-
-$post_data = array('id' => 730,
-    'type' => 'textview',
-    'name' => 'Server Title',
-    'relation' => 0,
-    'relationid' => 0,);
-/*
-echo json_encode(array('item0' => $post_data),JSON_FORCE_OBJECT);*/
-echo json_encode($post_data);
-
+$list = array(array('name' => $name, 'imageURL' => $imageURL));
+	echo json_encode($list);
+}
+echo(returnTestPage())
 ?>
+
