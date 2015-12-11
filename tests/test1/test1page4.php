@@ -51,7 +51,7 @@ $item3 = array('textid1' => 403,
     'factor2' => 1,
     'relation' => 0,
     'relationid' => 0,
-    'alignment' => '14',
+    'alignment' => '14,15',
     'inlayout' => 'middle');
 
 $list = array($item0, $item1, $item2, $item3);

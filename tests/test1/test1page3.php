@@ -45,7 +45,7 @@ $item3 = array('id' => 303,
     'maxvalue' => 4,
     'minvalue' => 0,
     'factor' => 0.1,
-    'alignment' => '14',
+    'alignment' => '14,15',
     'inlayout' => 'middle');
 
 
