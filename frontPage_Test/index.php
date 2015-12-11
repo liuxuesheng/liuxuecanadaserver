@@ -17,22 +17,20 @@ if ($conn->connect_error) {
 } 
 
 //title
-$sql = "SELECT name, imageURL FROM test_all WHERE id = 1";
+$sql = "SELECT name, imageURL FROM test_all ORDER BY id DESC LIMIT 6";
 mysqli_query($conn, "SET CHARACTER SET 'utf8';");
 
 $result = $conn->query($sql);
-$name = "";
-$imageURL = "";
+$list = array();
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $name .= $row["name"];
-        $imageURL .= $row["imageURL"];
+        $record = array('name' => $row["name"], 'imageURL' => $row["imageURL"]);
+        array_push($list, $record);
     }
 }
 
-$list = array(array('name' => $name, 'imageURL' => $imageURL));
 	echo json_encode($list);
 }
 echo(returnTestPage())
