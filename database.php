@@ -1,42 +1,33 @@
 <?php
+function db_connect() {
+    static $conn;
 
-$user = 'root';
-$password = '1ppVlcA9';
-$db = 'liuxuecanada';
-
-// Create connection
-$conn = new mysqli('localhost',$user, $password, $db);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-//echo "Database connected!!!"."<br>";
-
-$sql = "SELECT english_name FROM university";
-$result = $conn->query($sql);
-$nametring = "";
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $nametring .= $row["english_name"] . ",";
+    if(!isset($connection)) {
+        $config = parse_ini_file('config.ini'); 
+        $conn = new mysqli($config['host'],$config['username'], $config['password'], $config['db']);
     }
-    $nametring = substr($nametring, 0, -1);
-    echo $nametring;
-} else {
-    echo "0 results";
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    return $conn;
 }
 
+function db_query($query) {
+    $conn = db_connect();
+    $result = mysqli_query($conn,$query);
 
-
-/*
-$titlestring = "";
-while($row = mysqli_fetch_array($result))
-{
-  $titles .= $row['title'] . ", ";
+    return $result;
 }
-$titlestring = substr($titlestring, 0, -2);*/
 
+function db_query_noreturn($query) {
+    $conn = db_connect();
+    mysqli_query($conn,$query);
+}
 
-$conn->close();
+function db_error() {
+    $conn = db_connect();
+    return mysqli_error($conn);
+}
 ?>

@@ -1,5 +1,6 @@
 <?php
 header("Content-Type:text/html;charset=utf-8");
+include '../database.php';
 
 function returnNewsList(){
 $list = array();
@@ -30,22 +31,9 @@ echo json_encode($list);
 
 //getNewsHasImage 负责从数据库读取带有缩略图的新闻
 function getNewsHasImage($mysql, &$list, $section){
-    $user = 'root';
-    $password = '1ppVlcA9';
-    $db = 'liuxuecanada';
-    
-    // Create connection
-    $conn = new mysqli('localhost',$user, $password, $db);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-
-    $sql = $mysql;
+    $conn = db_connect();
     mysqli_query($conn, "SET CHARACTER SET 'utf8';");
-
-    $result = $conn->query($sql);
-    
+    $result = mysqli_query($conn, $mysql);  
 
     if ($result->num_rows > 0) {
         // output data of each row

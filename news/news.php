@@ -1,83 +1,69 @@
 <?php
 header("Content-Type:text/html;charset=utf-8");
+include '../database.php';
+
 $recordPage = isset($_GET['page']) ? $_GET['page'] : '';
 $section = isset($_GET['section']) ? $_GET['section'] : '';
 
 function returnPage1($page, $sec){
+    //title
+    $sql = "SELECT news_title FROM ".$sec." WHERE id = $page";
 
-$user = 'root';
-$password = '1ppVlcA9';
-$db = 'liuxuecanada';
+    $conn = db_connect();
+    mysqli_query($conn, "SET CHARACTER SET 'utf8';");
+    $result = mysqli_query($conn, $sql);
+    $news_title = "";
 
-// Create connection
-$conn = new mysqli('localhost',$user, $password, $db);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-//title
-$sql = "SELECT news_title FROM ".$sec." WHERE id = $page";
-mysqli_query($conn, "SET CHARACTER SET 'utf8';");
-
-$result = $conn->query($sql);
-$news_title = "";
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $news_title .= $row["news_title"] . ",";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $news_title .= $row["news_title"] . ",";
+        }
     }
-}
 
-$news_title = substr($news_title, 0, -1);
+    $news_title = substr($news_title, 0, -1);
 
-//subtitle
-$sql = "SELECT news_subtitle FROM ".$sec." WHERE id = $page";
-mysqli_query($conn, "SET CHARACTER SET 'utf8';");
+    //subtitle
+    $sql1 = "SELECT news_subtitle FROM ".$sec." WHERE id = $page";
+    $result = mysqli_query($conn, $sql1);
+    $news_subtitle = "";
 
-$result = $conn->query($sql);
-$news_subtitle = "";
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $news_subtitle .= $row["news_subtitle"] . ",";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $news_subtitle .= $row["news_subtitle"] . ",";
+        }
     }
-}
 
-$news_subtitle = substr($news_subtitle, 0, -1);
+    $news_subtitle = substr($news_subtitle, 0, -1);
 
-//image
-$sql = "SELECT news_imageURL FROM ".$sec." WHERE id = $page";
+    //image
+    $sql2 = "SELECT news_imageURL FROM ".$sec." WHERE id = $page";
+    $result = mysqli_query($conn, $sql2);
+    $imageURL = "";
 
-$result = $conn->query($sql);
-$imageURL = "";
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $imageURL .= $row["news_imageURL"] . ",";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $imageURL .= $row["news_imageURL"] . ",";
+        }
     }
-}
 
-$imageURL = substr($imageURL, 0, -1);
+    $imageURL = substr($imageURL, 0, -1);
 
-//content
-$sql = "SELECT news_content FROM ".$sec." WHERE id = $page";
-mysqli_query($conn, "SET CHARACTER SET 'utf8';");
+    //content
+    $sql3 = "SELECT news_content FROM ".$sec." WHERE id = $page";
+    $result = mysqli_query($conn, $sql3);
+    $nametring = "";
 
-$result = $conn->query($sql);
-$nametring = "";
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $nametring .= $row["news_content"] . ",";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $nametring .= $row["news_content"] . ",";
+        }
     }
-}
 
-$nametring = substr($nametring, 0, -1);
+    $nametring = substr($nametring, 0, -1);
 
 
 $item0 = array(
